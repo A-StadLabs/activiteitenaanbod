@@ -62,18 +62,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <paper-header-panel main mode="waterfall-tall">
 
-        <paper-toolbar id="mainToolbar" class="redback layout vertical end-justified">
-        <div class="layout horizontal">
-          <img src="images/a_zwart-rgb.svg" class="stralendeA">
-
-        <h1>Activiteiten aanbod</h1>
-        </div>
-
-
-
-
+        <paper-toolbar id="mainToolbar" class="redback">
+          <div class="topheader layout horizontal center">
+            <img src="images/a_zwart-rgb.svg" class="stralendeA">
+            <h1>Activiteiten aanbod</h1>
+          </div>
         </paper-toolbar>
 
+      <div class="filterheader">
+        <firebase-collection
+        order-by-child="created_at"
+        limit-to-first="100"
+        location="https://blazing-fire-6426.firebaseio.com/aanbodalles/-Jt8sqHs3vfjJ3Qn_Yoi" log
+        data="{{aanbod}}"></firebase-collection>
+      
+
+      <h3>Kies een type:</h3>
+
+      <select>
+
+      <template is="dom-repeat" items="{{sporten}}">
+         <option value="volvo">{{item.naam}}</option>
+      </template>
+
+      </select>
+
+      </div>
 
         <div class="content">
 
@@ -100,19 +114,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div class="canvas">
 
 
-<div class="elementme">
-
-      <h3>Kies een type:</h3>
-
-      <select>
-
-      <template is="dom-repeat" items="{{sporten}}">
-         <option value="volvo">{{item.naam}}</option>
-      </template>
-
-      </select>
-
-      </div>
       
 
 
@@ -228,6 +229,7 @@ Donec sodales velit at nisi aliquam finibus. Donec eget ornare ex. Pellentesque 
 In eget luctus neque, a blandit justo. Cras sollicitudin molestie mattis. Sed libero nisi, varius eu dapibus eget, posuere at ante. Nullam convallis velit orci, sit amet vulputate metus sagittis vitae. Phasellus eu cursus augue, sed pretium sem. Nulla a suscipit neque. Phasellus aliquam blandit turpis ut faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Vestibulum vel ipsum ut ipsum commodo ultrices vitae et arcu. In at sollicitudin risus. Sed iaculis eros ut nunc mollis, cursus interdum velit consequat. Quisque viverra eu odio non molestie.
 
 </p> -->
+
 
         </div>
       </paper-header-panel>

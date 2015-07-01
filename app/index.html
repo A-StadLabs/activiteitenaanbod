@@ -59,57 +59,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
 
-    <paper-drawer-panel id="paperDrawerPanel" force-narrow="true">
-      <div drawer>
 
-        <!-- Drawer Toolbar -->
-        <paper-toolbar id="drawerToolbar">
-          <span class="paper-font-title">Menu</span>
-        </paper-toolbar>
-
-        <!-- Drawer Content -->
-          <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
-              <a data-route="home" href="/">
-                <iron-icon icon="home"></iron-icon>
-                <span>Home</span>
-              </a>
-
-              <a data-route="users" href="/users">
-                <iron-icon icon="info"></iron-icon>
-                <span>Users</span>
-              </a>
-
-              <a data-route="contact" href="/contact">
-                <iron-icon icon="mail"></iron-icon>
-                <span>Contact</span>
-              </a>
-          </paper-menu>
-      </div>
       <paper-header-panel main mode="waterfall-tall">
 
-        <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar">
-          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-          <span class="flex"></span>
-
-          <!-- Toolbar icons -->
-          <paper-icon-button icon="refresh"></paper-icon-button>
-          <paper-icon-button icon="search"></paper-icon-button>
-
-          <!-- Application name -->
-          <div class="middle paper-font-display2 app-name">Activiteiten aanbod</div>
-
-          <!-- Application sub title -->
-          <div class="bottom title"></div>
-
+        <h1>Activiteiten aanbod</h1>
         </paper-toolbar>
 
-        <!-- Main Content -->
-        <div class="content">
-          <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
-            <section data-route="home">
-              <paper-material elevation="1">
+        <div class="content">
+
 
                 <firebase-collection
       order-by-child="categorie_id"
@@ -134,10 +93,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </template>
 
       </select>
+              
+<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam arcu arcu, auctor at elit a, porttitor luctus mauris. Donec nec elit vitae risus commodo bibendum. Aenean pulvinar libero nec quam fermentum commodo. Maecenas a varius tellus. Donec porttitor, urna ac mollis placerat, nulla risus imperdiet nulla, et bibendum tellus neque ac lacus. Nullam consectetur condimentum dignissim. Quisque accumsan vitae justo non pretium. Aenean sed elementum leo. Etiam at lorem quis nibh euismod molestie nec ac neque. Morbi tincidunt dui sed lorem consequat, non scelerisque purus tempor. Duis quam eros, rhoncus id fringilla non, finibus in diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sagittis ultricies nisl eget facilisis. Mauris volutpat et nisi id consequat.
 
+<<<<<<< HEAD
       </paper-material>
+=======
+Nullam id tincidunt arcu. Aliquam erat volutpat. Aenean vitae ipsum gravida, dapibus nunc vitae, lacinia ipsum. Suspendisse sodales, orci et pulvinar sodales, dolor magna interdum ex, vitae malesuada nunc felis a lorem. Sed id dignissim mi. Vestibulum scelerisque in leo a malesuada. Cras ut volutpat lectus, ut gravida lorem. Duis finibus congue facilisis. Donec laoreet erat a interdum blandit. Nullam rutrum sapien sit amet mattis pellentesque. Curabitur elementum erat auctor nisl tristique vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis arcu magna, lacinia sed massa consectetur, tempor vehicula metus. Pellentesque id dui nec eros sodales vulputate ut eget lorem.
+>>>>>>> origin/master
 
+Aenean vitae efficitur ipsum. Ut pellentesque justo eu accumsan commodo. Sed feugiat malesuada sodales. Etiam eleifend, velit ut posuere aliquet, sem purus venenatis libero, ut porttitor risus elit vitae libero. Nulla facilisi. Mauris ut nunc eu sapien volutpat porttitor ac eget diam. Cras mauris mi, congue ut ullamcorper non, facilisis a arcu. Fusce non convallis lorem. Nullam porta leo massa, sed consectetur quam lobortis non. Duis aliquam auctor tincidunt. Nulla pharetra commodo orci, sed efficitur orci sollicitudin ac.
 
+<<<<<<< HEAD
       <paper-material>
 
         <template is="dom-repeat" items="{{aanbod}}">
@@ -147,39 +114,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-material>
              
               
+=======
+Donec sodales velit at nisi aliquam finibus. Donec eget ornare ex. Pellentesque et enim diam. Etiam vitae auctor ex, vitae tincidunt nisl. Phasellus maximus porttitor molestie. Fusce mattis eu diam nec laoreet. Nunc sit amet vestibulum magna, ac dapibus risus. Integer tincidunt mollis tellus. Phasellus quis diam et leo faucibus rutrum. In hac habitasse platea dictumst. Donec ac ligula est. Aliquam nec felis arcu. Nunc quis neque a quam varius pulvinar. Donec ut egestas arcu.
 
-            </section>
+In eget luctus neque, a blandit justo. Cras sollicitudin molestie mattis. Sed libero nisi, varius eu dapibus eget, posuere at ante. Nullam convallis velit orci, sit amet vulputate metus sagittis vitae. Phasellus eu cursus augue, sed pretium sem. Nulla a suscipit neque. Phasellus aliquam blandit turpis ut faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Vestibulum vel ipsum ut ipsum commodo ultrices vitae et arcu. In at sollicitudin risus. Sed iaculis eros ut nunc mollis, cursus interdum velit consequat. Quisque viverra eu odio non molestie.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam arcu arcu, auctor at elit a, porttitor luctus mauris. Donec nec elit vitae risus commodo bibendum. Aenean pulvinar libero nec quam fermentum commodo. Maecenas a varius tellus. Donec porttitor, urna ac mollis placerat, nulla risus imperdiet nulla, et bibendum tellus neque ac lacus. Nullam consectetur condimentum dignissim. Quisque accumsan vitae justo non pretium. Aenean sed elementum leo. Etiam at lorem quis nibh euismod molestie nec ac neque. Morbi tincidunt dui sed lorem consequat, non scelerisque purus tempor. Duis quam eros, rhoncus id fringilla non, finibus in diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sagittis ultricies nisl eget facilisis. Mauris volutpat et nisi id consequat.
 
-            <section data-route="users">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">Users</h2>
-                <p>This is the users section</p>
-                <a href="/users/Rob">Rob</a>
-              </paper-material>
-            </section>
+Nullam id tincidunt arcu. Aliquam erat volutpat. Aenean vitae ipsum gravida, dapibus nunc vitae, lacinia ipsum. Suspendisse sodales, orci et pulvinar sodales, dolor magna interdum ex, vitae malesuada nunc felis a lorem. Sed id dignissim mi. Vestibulum scelerisque in leo a malesuada. Cras ut volutpat lectus, ut gravida lorem. Duis finibus congue facilisis. Donec laoreet erat a interdum blandit. Nullam rutrum sapien sit amet mattis pellentesque. Curabitur elementum erat auctor nisl tristique vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis arcu magna, lacinia sed massa consectetur, tempor vehicula metus. Pellentesque id dui nec eros sodales vulputate ut eget lorem.
 
-            <section data-route="user-info">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">
-                User:<span>{{params.name}}</span>
-                </h2>
-                <div>This is <span>{{params.name}}</span>'s section</div>
-              </paper-material>
-            </section>
+Aenean vitae efficitur ipsum. Ut pellentesque justo eu accumsan commodo. Sed feugiat malesuada sodales. Etiam eleifend, velit ut posuere aliquet, sem purus venenatis libero, ut porttitor risus elit vitae libero. Nulla facilisi. Mauris ut nunc eu sapien volutpat porttitor ac eget diam. Cras mauris mi, congue ut ullamcorper non, facilisis a arcu. Fusce non convallis lorem. Nullam porta leo massa, sed consectetur quam lobortis non. Duis aliquam auctor tincidunt. Nulla pharetra commodo orci, sed efficitur orci sollicitudin ac.
 
-            <section data-route="contact">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">Contact</h2>
-                <p>This is the contact section</p>
-              </paper-material>
-            </section>
+Donec sodales velit at nisi aliquam finibus. Donec eget ornare ex. Pellentesque et enim diam. Etiam vitae auctor ex, vitae tincidunt nisl. Phasellus maximus porttitor molestie. Fusce mattis eu diam nec laoreet. Nunc sit amet vestibulum magna, ac dapibus risus. Integer tincidunt mollis tellus. Phasellus quis diam et leo faucibus rutrum. In hac habitasse platea dictumst. Donec ac ligula est. Aliquam nec felis arcu. Nunc quis neque a quam varius pulvinar. Donec ut egestas arcu.
 
-          </iron-pages>
+In eget luctus neque, a blandit justo. Cras sollicitudin molestie mattis. Sed libero nisi, varius eu dapibus eget, posuere at ante. Nullam convallis velit orci, sit amet vulputate metus sagittis vitae. Phasellus eu cursus augue, sed pretium sem. Nulla a suscipit neque. Phasellus aliquam blandit turpis ut faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Vestibulum vel ipsum ut ipsum commodo ultrices vitae et arcu. In at sollicitudin risus. Sed iaculis eros ut nunc mollis, cursus interdum velit consequat. Quisque viverra eu odio non molestie.
+
+</p> -->
+>>>>>>> origin/master
+
         </div>
       </paper-header-panel>
-    </paper-drawer-panel>
 
-    <paper-toast id="caching-complete"
+    <!-- <paper-toast id="caching-complete"
                  duration="6000"
                  text="Caching complete! This app will work offline.">
     </paper-toast>
@@ -192,7 +147,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                          precache-file="precache.json">
       </platinum-sw-cache>
     </platinum-sw-register>
-
+ -->
   </template>
 
   <!-- build:js scripts/app.js -->

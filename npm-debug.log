@@ -1,0 +1,96 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/0.10.24/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'Polymer/firebase-element' ]
+2 info using npm@1.3.21
+3 info using node@v0.10.24
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'Polymer/firebase-element', null ]
+6 verbose cache add name=undefined spec="Polymer/firebase-element" args=["Polymer/firebase-element",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'Polymer/firebase-element',
+7 verbose parsed url   path: 'Polymer/firebase-element',
+7 verbose parsed url   href: 'Polymer/firebase-element' }
+8 silly lockFile 495f5170-Polymer-firebase-element Polymer/firebase-element
+9 verbose lock Polymer/firebase-element /Users/benadriaenssen/.npm/495f5170-Polymer-firebase-element.lock
+10 info maybeGithub Attempting Polymer/firebase-element from git://github.com/Polymer/firebase-element
+11 silly lockFile cb66c99c-hub-com-Polymer-firebase-element git://github.com/Polymer/firebase-element
+12 verbose lock git://github.com/Polymer/firebase-element /Users/benadriaenssen/.npm/cb66c99c-hub-com-Polymer-firebase-element.lock
+13 verbose addRemoteGit [ 'git://github.com/Polymer/firebase-element', 'master' ]
+14 verbose git clone git://github.com/Polymer/firebase-element Cloning into bare repository '/Users/benadriaenssen/.npm/_git-remotes/git-github-com-Polymer-firebase-element-cb66c99c'...
+15 verbose git fetch -a origin (git://github.com/Polymer/firebase-element)
+16 verbose git rev-list -n1 master c6a0acee3181971c5db7e5773b1cce48872e7131
+17 verbose resolved git url git://github.com/Polymer/firebase-element#c6a0acee3181971c5db7e5773b1cce48872e7131
+18 verbose tar unpack /var/folders/pv/wt0dt1x51wz2vxm5zd8yzzy80000gs/T/npm-29024-vtHABcsa/1435758360273-0.7370329985860735/tmp.tgz
+19 silly lockFile 37cafb76-60273-0-7370329985860735-package tar:///var/folders/pv/wt0dt1x51wz2vxm5zd8yzzy80000gs/T/npm-29024-vtHABcsa/1435758360273-0.7370329985860735/package
+20 verbose lock tar:///var/folders/pv/wt0dt1x51wz2vxm5zd8yzzy80000gs/T/npm-29024-vtHABcsa/1435758360273-0.7370329985860735/package /Users/benadriaenssen/.npm/37cafb76-60273-0-7370329985860735-package.lock
+21 silly lockFile 2fca822b-60273-0-7370329985860735-tmp-tgz tar:///var/folders/pv/wt0dt1x51wz2vxm5zd8yzzy80000gs/T/npm-29024-vtHABcsa/1435758360273-0.7370329985860735/tmp.tgz
+22 verbose lock tar:///var/folders/pv/wt0dt1x51wz2vxm5zd8yzzy80000gs/T/npm-29024-vtHABcsa/1435758360273-0.7370329985860735/tmp.tgz /Users/benadriaenssen/.npm/2fca822b-60273-0-7370329985860735-tmp-tgz.lock
+23 silly gunzTarPerm modes [ '755', '644' ]
+24 silly gunzTarPerm extractEntry
+25 silly gunzTarPerm modified mode [ '', 509, 493 ]
+26 silly gunzTarPerm extractEntry README.md
+27 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+28 silly gunzTarPerm extractEntry bower.json
+29 silly gunzTarPerm modified mode [ 'bower.json', 436, 420 ]
+30 silly gunzTarPerm extractEntry demo.html
+31 silly gunzTarPerm modified mode [ 'demo.html', 436, 420 ]
+32 silly gunzTarPerm extractEntry demos/
+33 silly gunzTarPerm modified mode [ 'demos/', 509, 493 ]
+34 silly gunzTarPerm extractEntry demos/firebase.html
+35 silly gunzTarPerm modified mode [ 'demos/firebase.html', 436, 420 ]
+36 silly gunzTarPerm extractEntry demos/login.html
+37 silly gunzTarPerm modified mode [ 'demos/login.html', 436, 420 ]
+38 silly gunzTarPerm extractEntry firebase-element.html
+39 silly gunzTarPerm modified mode [ 'firebase-element.html', 436, 420 ]
+40 silly gunzTarPerm extractEntry firebase-import.html
+41 silly gunzTarPerm modified mode [ 'firebase-import.html', 436, 420 ]
+42 silly gunzTarPerm extractEntry firebase-login.html
+43 silly gunzTarPerm modified mode [ 'firebase-login.html', 436, 420 ]
+44 silly gunzTarPerm extractEntry index.html
+45 silly gunzTarPerm modified mode [ 'index.html', 436, 420 ]
+46 silly gunzTarPerm extractEntry metadata.html
+47 silly gunzTarPerm modified mode [ 'metadata.html', 436, 420 ]
+48 silly lockFile 37cafb76-60273-0-7370329985860735-package tar:///var/folders/pv/wt0dt1x51wz2vxm5zd8yzzy80000gs/T/npm-29024-vtHABcsa/1435758360273-0.7370329985860735/package
+49 silly lockFile 37cafb76-60273-0-7370329985860735-package tar:///var/folders/pv/wt0dt1x51wz2vxm5zd8yzzy80000gs/T/npm-29024-vtHABcsa/1435758360273-0.7370329985860735/package
+50 silly lockFile 2fca822b-60273-0-7370329985860735-tmp-tgz tar:///var/folders/pv/wt0dt1x51wz2vxm5zd8yzzy80000gs/T/npm-29024-vtHABcsa/1435758360273-0.7370329985860735/tmp.tgz
+51 silly lockFile 2fca822b-60273-0-7370329985860735-tmp-tgz tar:///var/folders/pv/wt0dt1x51wz2vxm5zd8yzzy80000gs/T/npm-29024-vtHABcsa/1435758360273-0.7370329985860735/tmp.tgz
+52 silly lockFile cb66c99c-hub-com-Polymer-firebase-element git://github.com/Polymer/firebase-element
+53 silly lockFile cb66c99c-hub-com-Polymer-firebase-element git://github.com/Polymer/firebase-element
+54 info maybeGithub Attempting Polymer/firebase-element from git+ssh://git@github.com:Polymer/firebase-element
+55 silly lockFile 335767c0-hub-com-Polymer-firebase-element git+ssh://git@github.com:Polymer/firebase-element
+56 verbose lock git+ssh://git@github.com:Polymer/firebase-element /Users/benadriaenssen/.npm/335767c0-hub-com-Polymer-firebase-element.lock
+57 verbose addRemoteGit [ 'git@github.com:Polymer/firebase-element', 'master' ]
+58 error git clone git@github.com:Polymer/firebase-element Cloning into bare repository '/Users/benadriaenssen/.npm/_git-remotes/git-github-com-Polymer-firebase-element-15378283'...
+58 error git clone git@github.com:Polymer/firebase-element Permission denied (publickey).
+58 error git clone git@github.com:Polymer/firebase-element fatal: Could not read from remote repository.
+58 error git clone git@github.com:Polymer/firebase-element
+58 error git clone git@github.com:Polymer/firebase-element Please make sure you have the correct access rights
+58 error git clone git@github.com:Polymer/firebase-element and the repository exists.
+59 silly lockFile 15378283-hub-com-Polymer-firebase-element git@github.com:Polymer/firebase-element
+60 silly lockFile 495f5170-Polymer-firebase-element Polymer/firebase-element
+61 silly lockFile 495f5170-Polymer-firebase-element Polymer/firebase-element
+62 error addLocal Could not install Polymer/firebase-element
+63 error Error: ENOENT, stat 'Polymer/firebase-element'
+64 error If you need help, you may report this *entire* log,
+64 error including the npm and node versions, at:
+64 error     <http://github.com/isaacs/npm/issues>
+65 error System Darwin 14.3.0
+66 error command "/usr/local/Cellar/node/0.10.24/bin/node" "/usr/local/bin/npm" "install" "--save" "Polymer/firebase-element"
+67 error cwd /Users/benadriaenssen/Sites/activiteitenaanbod
+68 error node -v v0.10.24
+69 error npm -v 1.3.21
+70 error path Polymer/firebase-element
+71 error code ENOENT
+72 error errno 34
+73 verbose exit [ 34, true ]

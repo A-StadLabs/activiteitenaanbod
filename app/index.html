@@ -117,6 +117,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       location="https://blazing-fire-6426.firebaseio.com/activiteitenaanbod"
       data="{{sporten}}"></firebase-collection>
 
+      <firebase-collection
+      order-by-child="created_at"
+      limit-to-first="100"
+      location="https://blazing-fire-6426.firebaseio.com/aanbodalles/-Jt8sqHs3vfjJ3Qn_Yoi" log
+      data="{{aanbod}}"></firebase-collection>
+
+      
+
       <h3>Kies een type:</h3>
 
       <select>
@@ -127,11 +135,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       </select>
 
+      </paper-material>
 
 
-     
-              
-              </paper-material>
+      <paper-material>
+
+        <template is="dom-repeat" items="{{aanbod}}">
+         <p>{{item.naam}}</p>
+      </template>
+
+      </paper-material>
              
               
 

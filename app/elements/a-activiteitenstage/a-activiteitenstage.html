@@ -24,20 +24,11 @@ paper-scroll-header-panel {
   height: 100%;
 }
 
-  .blok {
-    width: 50vw;
-    height: 50vh;
-  }
+  
 
-
- .redback {
-    background-color: var(--primary-red);
-    color: white;
-  }
-  .greenback {
-    background-color: green;
-    color: white;
-  }
+  neon-animated-pages {
+        height: 100%;
+      }
 
 
   </style>
@@ -45,35 +36,14 @@ paper-scroll-header-panel {
 
   <neon-animated-pages selected="{{select}}" entry-animation="hero-animation" exit-animation="hero-animation">
 
-  <neon-animatable id="een"> 
 
-  <div class="layout vertical">
+  <a-one on-click="voetbal"></a-one>
 
-    <div class="layout horizontal">
-      <div class="blok redback">
-        <div id="hero" on-click="voetbal">voetbal</div>
-      </div>
-      <div class="blok greenback">
-        <div id="hero">voetbal</div>
-      </div>
-    </div>
-  
-    <div>locatie</div>
+ 
 
-  </div>
+   <a-twi on-click="returnone"></a-twi>
 
-  </neon-animatable>
 
-  <neon-animatable id="twee">
-
-    <div class="layout vertical">
-      <div id="hero" class="redback">voetbal</div>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dui tellus, fermentum ut augue non, porttitor auctor tellus. Etiam nulla lacus, tincidunt vel magna et, rhoncus venenatis est. Cras pellentesque in elit eget suscipit. Etiam a dui ut nisi tincidunt pulvinar a in lorem. Ut condimentum hendrerit arcu ac sollicitudin. Phasellus dapibus erat sit amet purus tincidunt auctor. Vestibulum vitae nibh nisl. Ut dignissim magna nunc, a faucibus libero aliquam ac. Pellentesque vel odio id nisi facilisis bibendum. Integer diam diam, semper sed nisl non, auctor venenatis nulla. Mauris id mollis orci, eget efficitur nulla. Suspendisse fermentum vel diam nec mollis. Curabitur dictum, libero sed efficitur congue, orci felis convallis odio, sit amet porta lorem tellus sed massa. Nullam sit amet pretium diam, eu efficitur augue. Duis tempor rutrum quam at dignissim. Praesent vitae commodo nibh.
-      </div>
-    </div>
-
-  </neon-animatable>
 
   </neon-animated-pages>
 
@@ -84,39 +54,36 @@ paper-scroll-header-panel {
   Polymer({
     is: 'a-activiteitenstage',
 
-    properties: {
-      foo: {
-        type: String,
-        value: 'bar',
-        notify: true
-      },
+ 
 
-      animationConfig: {
-        type: Object,
-        value: function() {
-          return {
-            'entry': {
-              name: 'hero-animation',
-              id: 'hero',
-              fromPage: null,
-              toPage: this.$.twee,
-              timing: {
-                delay: 150
-              }
-            },
-            'exit': {
-              name: 'hero-animation',
-              id: 'hero',
-              fromPage: null,
-              toPage: this,
-              timing: {
-                delay: 150
-              }
-            }
-          }
+    properties: {
+  animationConfig: {
+    value: function() {
+      return {
+        // the incoming page defines the 'entry' animation
+        'entry': {
+          name: 'hero-animation',
+          id: 'hero',
+          fromPage: null,
+          toPage: this
+        },
+        'exit': {
+          name: 'hero-animation',
+          id: 'hero',
+          fromPage: this,
+          toPage: null
         }
       }
-    },
+    }
+  },
+  sharedElements: {
+    value: function() {
+      return {
+        'hero': this.$.hero
+      }
+    }
+  }
+},
 
     
 
@@ -126,6 +93,11 @@ paper-scroll-header-panel {
 
     voetbal: function(){
       this.select = 1;
+      console.log('clike!');
+    },
+
+    returnone: function(){
+      this.select = 0;
       console.log('clike!');
     }
   });

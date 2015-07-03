@@ -21,11 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
 
-paper-scroll-header-panel {
-  height: 100%;
-}
 
-  
 
   neon-animated-pages {
         height: 100%;
@@ -39,8 +35,6 @@ paper-scroll-header-panel {
 
 
   <a-one on-click="voetbal"></a-one>
-
- 
 
    <a-twi on-click="returnone"></a-twi>
 
@@ -56,34 +50,8 @@ paper-scroll-header-panel {
     is: 'a-activiteitenstage',
 
  
-
     properties: {
-  animationConfig: {
-    value: function() {
-      return {
-        // the incoming page defines the 'entry' animation
-        'entry': {
-          name: 'hero-animation',
-          id: 'hero',
-          fromPage: null,
-          toPage: this
-        },
-        'exit': {
-          name: 'hero-animation',
-          id: 'hero',
-          fromPage: this,
-          toPage: null
-        }
-      }
-    }
-  },
-  sharedElements: {
-    value: function() {
-      return {
-        'hero': this.$.hero
-      }
-    }
-  }
+  
 },
 
     

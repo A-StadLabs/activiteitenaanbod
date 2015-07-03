@@ -21,10 +21,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     height: 50vh;
   }
 
+  #hero {
+    font-size: 40px;
+  }
+
 
  .redback {
     background-color: var(--primary-red);
     color: white;
+    height: 100%;
+    width: 100%;
   }
   .greenback {
     background-color: green;
@@ -32,12 +38,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
   </style>
   <template>
-     <div class="layout vertical">
+     
       <div id="hero" class="redback">voetbal</div>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dui tellus, fermentum ut augue non, porttitor auctor tellus. Etiam nulla lacus, tincidunt vel magna et, rhoncus venenatis est. Cras pellentesque in elit eget suscipit. Etiam a dui ut nisi tincidunt pulvinar a in lorem. Ut condimentum hendrerit arcu ac sollicitudin. Phasellus dapibus erat sit amet purus tincidunt auctor. Vestibulum vitae nibh nisl. Ut dignissim magna nunc, a faucibus libero aliquam ac. Pellentesque vel odio id nisi facilisis bibendum. Integer diam diam, semper sed nisl non, auctor venenatis nulla. Mauris id mollis orci, eget efficitur nulla. Suspendisse fermentum vel diam nec mollis. Curabitur dictum, libero sed efficitur congue, orci felis convallis odio, sit amet porta lorem tellus sed massa. Nullam sit amet pretium diam, eu efficitur augue. Duis tempor rutrum quam at dignissim. Praesent vitae commodo nibh.
-      </div>
-    </div>
+      <div>hallo</div>
+      
   </template>
 </dom-module>
 <script>
@@ -79,12 +83,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             },
             'exit': [{
               name: 'fade-out-animation',
-              node: this.$.fixed
+              node: this.$.hero,
+              timing: {
+                delay: 15000
+              }
             }, {
               name: 'transform-animation',
               transformFrom: 'none',
               transformTo: 'translate(0px,-200vh) scale(0.9,1)',
-              node: this.$.card
+              node: this.$.hero,
+              timing: {
+                delay: 15000
+              }
             }]
           }
         }

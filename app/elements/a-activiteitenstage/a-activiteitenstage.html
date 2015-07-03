@@ -12,6 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/neon-animation/neon-animated-pages.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-animatable.html">
 <link rel="import" href="../../bower_components/neon-animation/animations/hero-animation.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-animations.html">
 
 <dom-module id="a-activiteitenstage">
   <style>
@@ -34,7 +35,7 @@ paper-scroll-header-panel {
   </style>
   <template>
 
-  <neon-animated-pages selected="{{select}}" entry-animation="hero-animation" exit-animation="hero-animation">
+  <neon-animated-pages selected="{{select}}">
 
 
   <a-one on-click="voetbal"></a-one>

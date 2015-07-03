@@ -9,6 +9,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-animatable.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/hero-animation.html">
 
 <dom-module id="a-activiteitenstage">
   <style>
@@ -21,61 +24,58 @@ paper-scroll-header-panel {
   height: 100%;
 }
 
+  .blok {
+    width: 50vw;
+    height: 50vh;
+  }
+
+
+ .redback {
+    background-color: var(--primary-red);
+    color: white;
+  }
+  .greenback {
+    background-color: green;
+    color: white;
+  }
+
 
   </style>
   <template>
 
+  <neon-animated-pages selected="{{select}}" entryAnimation="hero-animation" exitAnimation="hero-animation">
 
+  <neon-animatable>
 
+  <div class="layout vertical">
 
-
-
-
-
-
-
-
-
-
-
-<paper-scroll-header-panel>
-  <paper-toolbar>Header</paper-toolbar>
-  <div>
-
-        <firebase-collection
-        order-by-child="created_at"
-        limit-to-first="100"
-        location="https://blazing-fire-6426.firebaseio.com/aanbodalles/-Jt8sqHs3vfjJ3Qn_Yoi" log
-        data="{{aanbod}}"></firebase-collection>
-
-      <select>
-      <template is="dom-repeat" items="{{sporten}}">
-         <option value="volvo">{{item.naam}}</option>
-      </template>
-      </select>
-
-                <firebase-collection
-      order-by-child="categorie_id"
-      limit-to-first="100"
-      location="https://blazing-fire-6426.firebaseio.com/activiteitenaanbod"
-      data="{{sporten}}"></firebase-collection>
-
-
-
-
-
-
+    <div class="layout horizontal">
+      <div class="blok redback">
+        <div id="hero" on-click="voetbal">voetbal</div>
+      </div>
+      <div class="blok greenback">
+        <div id="hero">voetbal</div>
+      </div>
+    </div>
+  
+    <div>locatie</div>
 
   </div>
-</paper-scroll-header-panel>
 
+  </neon-animatable>
 
+  <neon-animatable>
 
+    <div class="layout vertical">
+      <div id="hero">voetbal</div>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dui tellus, fermentum ut augue non, porttitor auctor tellus. Etiam nulla lacus, tincidunt vel magna et, rhoncus venenatis est. Cras pellentesque in elit eget suscipit. Etiam a dui ut nisi tincidunt pulvinar a in lorem. Ut condimentum hendrerit arcu ac sollicitudin. Phasellus dapibus erat sit amet purus tincidunt auctor. Vestibulum vitae nibh nisl. Ut dignissim magna nunc, a faucibus libero aliquam ac. Pellentesque vel odio id nisi facilisis bibendum. Integer diam diam, semper sed nisl non, auctor venenatis nulla. Mauris id mollis orci, eget efficitur nulla. Suspendisse fermentum vel diam nec mollis. Curabitur dictum, libero sed efficitur congue, orci felis convallis odio, sit amet porta lorem tellus sed massa. Nullam sit amet pretium diam, eu efficitur augue. Duis tempor rutrum quam at dignissim. Praesent vitae commodo nibh.
+      </div>
+    </div>
 
+  </neon-animatable>
 
-
-
-
+  </neon-animated-pages>
 
   </template>
 </dom-module>
@@ -90,6 +90,15 @@ paper-scroll-header-panel {
         value: 'bar',
         notify: true
       }
+    },
+
+    ready: function(){
+      this.select = 0;
+    },
+
+    voetbal: function(){
+      this.select = 1;
+      console.log('clike!');
     }
   });
 })();

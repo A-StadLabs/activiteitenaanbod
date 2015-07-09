@@ -11,55 +11,99 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
 
-<dom-module id="a-twi">
+
+<dom-module id="a-tijd">
   <style>
+
     :host {
       display: block;
     }
+
+    
+    .topblok {
+      width: 100vw;
+      height: 85vh;
+      padding-top: 30px;
+    }
+
     .blok {
-    width: 50vw;
-    height: 50vh;
-  }
+      width: 50vw;
+      height: 15vh;
+    }
 
-  #hero {
-    font-size: 40px;
-  }
+    #hero {
+      font-size: 40px;
+    }
 
+     .completeCenter {
+      @apply(--layout-horizontal);
+      @apply(--layout-center);
+      @apply(--layout-vertical);
+      @apply(--layout-center-justified);
+    }
 
- .redback {
-    background-color: var(--primary-red);
+   .activiteitback {
+    background-color: #9AC0B9;
     color: white;
-    height: 100%;
-    width: 100%;
   }
-  .greenback {
-    background-color: green;
+
+  .locatieback {
+    background-color: #CFE0D8;
     color: white;
   }
+
+  .tijdback {
+    background-color: #EBCD5B;
+    color: white;
+  }
+
+  img {
+    max-width: 30%;
+    max-height: 30%;
+  }
+
+
+  .full {
+    height: 90vh;
+  }
+
   </style>
   <template>
+
+      <div class="vertical layout full">
      
-      <div id="hero" class="redback">voetbal</div>
-      <div>hallo</div>
+        <div class="tijdback topblok layout vertical center">
+          <img id="hero1" src="/images/calendar146.svg">
+        </div>
+
+        <div class="horizontal layout">
+          <div class="activiteitback blok completeCenter" on-click="getActiviteit">
+            <img id="hero1" src="/images/soccer66.svg">
+          </div>
+          <div class="locatieback blok completeCenter" on-click="getLocatie">
+            <img id="hero2" src="/images/marker19.svg">
+          </div>
+        </div>
+
+      </div>
+
+
       
   </template>
 </dom-module>
 <script>
 (function() {
   Polymer({
-    is: 'a-twi',
+    is: 'a-tijd',
 
     behaviors: [
       Polymer.NeonSharedElementAnimatableBehavior
     ],
 
     properties: {
-      foo: {
-        type: String,
-        value: 'bar',
-        notify: true
+      color: {
+        type: String
       },
-
       sharedElements: {
         type: Object,
         value: function() {
@@ -68,7 +112,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           }
         }
       },
-
       animationConfig: {
         type: Object,
         value: function() {
@@ -78,28 +121,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               id: 'hero',
               toPage: this,
               timing: {
-                delay: 15000
+                delay: 150
               }
             },
             'exit': [{
               name: 'fade-out-animation',
-              node: this.$.hero,
-              timing: {
-                delay: 15000
-              }
+              node: this
             }, {
               name: 'transform-animation',
               transformFrom: 'none',
               transformTo: 'translate(0px,-200vh) scale(0.9,1)',
-              node: this.$.hero,
-              timing: {
-                delay: 15000
-              }
+              node: this
             }]
           }
         }
       }
+    },
+
+    getLocatie: function(){
+      this.fire('cattap', { 'msg': 3})
+    },
+
+    getActiviteit: function(){
+      this.fire('cattap', { 'msg': 1})
     }
+
+
+
+
+    
+        
+    
   });
 })();
 </script>

@@ -8,7 +8,9 @@
     "neon-elements": "PolymerElements/neon-elements#1.0.0",
     "page": "visionmedia/page.js#~1.6.3",
     "firebase-element": "Polymer/firebase-element#~0.5.6",
-    "polymer-paper-dropdown": "Yobretaw/Polymer-paper-dropdown"
+    "polymer-paper-dropdown": "Yobretaw/Polymer-paper-dropdown",
+    "google-map": "GoogleWebComponents/google-map#^1.0.0",
+    "geo-location": "ebidel/geo-location#~1.0.0"
   },
   "devDependencies": {
     "web-component-tester": "*",

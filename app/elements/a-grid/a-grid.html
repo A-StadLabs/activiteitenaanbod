@@ -1,0 +1,155 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
+
+
+<dom-module id="a-grid">
+  <style>
+    :host {
+      display: block;
+    }
+
+    .completeCenter {
+      @apply(--layout-horizontal);
+      @apply(--layout-center);
+      @apply(--layout-vertical);
+      @apply(--layout-center-justified);
+    }
+
+  .blok {
+    width: 50vw;
+    height: 50vh;
+  }
+
+  .blokonder {
+    width: 100vw;
+    height: 50vh;
+  }
+
+
+ .activiteitback {
+    background-color: #9AC0B9;
+    color: white;
+  }
+
+  .locatieback {
+    background-color: #CFE0D8;
+    color: white;
+  }
+
+  .tijdback {
+    background-color: #EBCD5B;
+    color: white;
+  }
+
+  img {
+    max-width: 30%;
+    max-height: 30%;
+  }
+
+
+  h1 {
+      color: #333333;
+      font-size: 18px;
+  }
+
+  .logo {
+    
+  }
+
+  </style>
+  <template>
+    <div class="layout vertical">
+
+      <div class="layout horizontal">
+
+          <div id="ripple" on-click="tapactiviteit" class="blok activiteitback completeCenter">
+            <img id="hero" src="/images/soccer66.svg">
+            <p>Kies een activiteit</p>
+          </div>
+     
+          <div class="blok locatieback completeCenter" on-click="taplocatie">
+            <img id="hero2" src="/images/marker19.svg">
+            <p>Kies een locatie</p>
+          </div>
+
+      </div>
+  
+    <div on-click="taptijd" class="blokonder tijdback completeCenter">
+      <img id="hero1" src="/images/calendar146.svg">
+      <p>Kies een tijdstip of periode</p>
+    </div>
+
+  </div>
+  </template>
+</dom-module>
+<script>
+(function() {
+  Polymer({
+    is: 'a-grid',
+
+    behaviors: [
+      Polymer.NeonSharedElementAnimatableBehavior
+    ],
+
+    properties: {
+      foo: {
+        type: String,
+        value: 'bar',
+        notify: true
+      },
+
+      animationConfig: {
+        type: Object,
+        value: function() {
+          return {
+            'exit': [{
+              name: 'ripple-animation',
+              id: 'ripple',
+              fromPage: this
+            }, {
+              name: 'hero-animation',
+              id: 'hero',
+              fromPage: this
+            }]
+          }
+        }
+      }
+    },
+
+
+    tapactiviteit: function(event){
+      this.sharedElements = {
+        'hero': this.$.hero1
+      };
+
+      this.fire('cattap', { 'msg': 1})
+    },
+
+    taptijd: function(){
+      this.sharedElements = {
+        'hero': this.$.hero2
+      };
+      
+      this.fire('cattap', { 'msg': 2})
+    },
+
+    taplocatie: function(){
+      this.sharedElements = {
+        'hero': this.$.hero3
+      };
+      
+      this.fire('cattap', { 'msg': 3})
+    },
+  });
+})();
+</script>

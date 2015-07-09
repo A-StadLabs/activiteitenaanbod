@@ -20,25 +20,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       display: block;
     }
 
-
-
+  paper-toolbar {
+    background-color: #315467;
+  }
 
   neon-animated-pages {
-        height: 100%;
-      }
-
+    height: 100%;
+  }
 
   </style>
   <template>
 
+  <paper-toolbar>
+    <img class="logo" src="/images/a_wit-rgb.svg" />
+    <span class="flex"></span>
+    <span>Activiteiten aanbod</span>
+  </paper-toolbar>
+
   <neon-animated-pages selected="{{select}}">
 
+  <a-grid on-cattap="selectmethod"></a-grid>
 
-  <a-one on-click="voetbal"></a-one>
+  <a-activiteit on-cattap="selectmethod" method="{{searchmethod}}"></a-activiteit>
 
-   <a-twi on-click="returnone"></a-twi>
+  <a-tijd on-cattap="selectmethod" method="{{searchmethod}}"></a-tijd>
 
-
+  <a-locatie on-cattap="selectmethod" method="{{searchmethod}}"></a-locatie>
 
   </neon-animated-pages>
 
@@ -49,26 +56,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   Polymer({
     is: 'a-activiteitenstage',
 
- 
     properties: {
   
-},
-
-    
+    },
 
     ready: function(){
       this.select = 0;
     },
 
-    voetbal: function(){
-      this.select = 1;
+    selectmethod: function(e){
+      this.searchmethod = e.detail.msg;
+      console.log(e.detail.msg);
+      this.select = e.detail.msg;
       console.log('clike!');
     },
 
-    returnone: function(){
+    backtostart: function(){
       this.select = 0;
       console.log('clike!');
     }
+
   });
 })();
 </script>

@@ -1,0 +1,187 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
+<link rel="import" href="../../bower_components/google-map/google-map.html">
+
+
+
+
+<dom-module id="a-locatie">
+  <style>
+
+    :host {
+      display: block;
+    }
+
+    
+    .topblok {
+      width: 100vw;
+      height: 85vh;
+      padding-top: 30px;
+    }
+
+    .blok {
+      width: 50vw;
+      height: 15vh;
+    }
+
+    #hero {
+      font-size: 40px;
+    }
+
+     .completeCenter {
+      @apply(--layout-horizontal);
+      @apply(--layout-center);
+      @apply(--layout-vertical);
+      @apply(--layout-center-justified);
+    }
+
+   .activiteitback {
+    background-color: #9AC0B9;
+    color: white;
+  }
+
+  .locatieback {
+    background-color: #CFE0D8;
+    color: white;
+  }
+
+  .tijdback {
+    background-color: #EBCD5B;
+    color: white;
+  }
+
+  img {
+    max-width: 30%;
+    max-height: 30%;
+  }
+
+  google-map {
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    height: 78vh;
+  }
+
+  .radius {
+    position: absolute;
+    border: 4px solid red;
+    border-radius: 999px;
+      -moz-border-radius: 999px;
+      -khtml-border-radius: 999px;
+      -webkit-border-radius: 999px;
+  }
+
+  .full {
+    height: 90vh;
+  }
+
+  </style>
+  <template>
+
+      <div class="vertical layout full">
+     
+        <div class="locatieback topblok layout vertical center">
+
+          <geo-location latitude="{{lat}}"
+               longitude="{{lng}}"></geo-location>
+
+          <div class="radius"></div>
+
+          <google-map id="googlemap" latitude="{{lat}}"
+               longitude="{{lng}}" zoom="16" on-google-map-ready="resizeMap">
+          </google-map>
+
+        </div>
+
+        <div class="horizontal layout">
+          <div class="activiteitback blok completeCenter" on-click="getActiviteit">
+            <img id="hero1" src="/images/soccer66.svg">
+          </div>
+          <div class="tijdback blok completeCenter" on-click="getTijd">
+            <img id="hero1" src="/images/calendar146.svg">
+          </div>
+        </div>
+
+      </div>
+
+
+      
+  </template>
+</dom-module>
+<script>
+(function() {
+  Polymer({
+    is: 'a-locatie',
+
+    behaviors: [
+      Polymer.NeonSharedElementAnimatableBehavior
+    ],
+
+    properties: {
+      color: {
+        type: String
+      },
+      sharedElements: {
+        type: Object,
+        value: function() {
+          return {
+            'hero': this.$.hero
+          }
+        }
+      },
+      animationConfig: {
+        type: Object,
+        value: function() {
+          return {
+            'entry': {
+              name: 'hero-animation',
+              id: 'hero',
+              toPage: this,
+              timing: {
+                delay: 150
+              }
+            },
+            'exit': [{
+              name: 'fade-out-animation',
+              node: this
+            }, {
+              name: 'transform-animation',
+              transformFrom: 'none',
+              transformTo: 'translate(0px,-200vh) scale(0.9,1)',
+              node: this
+            }]
+          }
+        }
+      }
+    },
+
+
+    getTijd: function(){
+      this.fire('cattap', { 'msg': 2})
+    },
+
+    getActiviteit: function(){
+      this.fire('cattap', { 'msg': 1})
+    },
+
+    resizeMap: function(){
+      console.log('map ready');
+      this.$.googlemap.resize();
+    }
+
+    
+        
+    
+  });
+})();
+</script>

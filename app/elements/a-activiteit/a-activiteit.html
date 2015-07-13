@@ -10,7 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
-
+<link rel="import" href="bower_components/neon-animated-pages/neon-animated-pages.html">
 <dom-module id="a-activiteit">
 
   <style>
@@ -66,14 +66,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     height: 90vh;
   }
 
+  paper-menu {
+    height: 100vh;
+    width: 100vw;
+     background-color: #9AC0B9;
+  }
+
   </style>
 
   <template>
 
+    <firebase-collection
+      order-by-child="naam"
+      limit-to-first="20"
+      location="https://blazing-fire-6426.firebaseio.com/activiteitenaanbod"
+      data="{{activiteiten}}"></firebase-collection>
+
       <div class="vertical layout full">
-     
+     <div><img src="/images/soccer66.svg"></div>
         <div id="ripple" class="activiteitback topblok layout vertical center">
-          <img id="hero" src="/images/soccer66.svg">
+          <paper-menu multi class="flex">
+            <template is="dom-repeat" items="{{activiteiten}}">
+            <paper-item>{{item.naam}}</paper-item>
+            </template>
+          </paper-menu>
         </div>
 
         <div class="horizontal layout">
@@ -90,6 +106,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       </div>
 
+
   </template>
 </dom-module>
 <script>
@@ -104,6 +121,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     properties: {
       color: {
         type: String
+      },
+
+      selection: {
+        type: Number,
+        value: 0
       },
 
       sharedElements: {
@@ -148,6 +170,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     getLocatie: function(){
       this.fire('cattap', { 'msg': 3})
+    },
+
+    selekt: function(){
+      console.log('hello');
+      if(this.selection>2){
+        this.selection = 0;
+      }
+      this.selection++;
     }
 
     

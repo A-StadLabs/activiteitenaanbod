@@ -12,9 +12,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
 <link rel="import" href="../../bower_components/google-map/google-map.html">
 
-
-
-
 <dom-module id="a-locatie">
   <style>
 
@@ -69,7 +66,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     position: absolute;
     top: 0px;
     width: 100vw;
-    height: 78vh;
+    height: 77vh;
   }
 
   .radius {
@@ -97,7 +94,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <div class="radius"></div>
 
-          <google-map id="googlemap" latitude="{{lat}}"
+          <google-map class="flex" id="googlemap" latitude="{{lat}}"
                longitude="{{lng}}" zoom="16" on-google-map-ready="resizeMap">
           </google-map>
 
